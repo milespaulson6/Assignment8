@@ -1,0 +1,25 @@
+﻿@model Assignment5.Models.Product
+<tr>
+    <td style="background-color:lightblue">@Model.BookID</td>
+    <td>@Model.Title</td>
+    <td>@Model.AuthorFirst</td>
+    <td>@Model.AuthorMiddle</td>
+    <td>@Model.AuthorLast</td>
+    <td>@Model.Publisher</td>
+    <td>@Model.ISBN</td>
+    <td>@Model.Classification</td>
+    <td>@Model.Category</td>
+    <td>$@Model.Price</td>
+    <td>@Model.PageLength</td>
+    <td><form id="@Model.BookID" asp-page="/Donate" method="post">
+        <input type="hidden" asp-for="BookID" />
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+        <span class="card-text p-1">
+            
+            <button type="submit" class="btn-success btn-sm align-content-center" >
+                Buy
+            </button>
+        </span>
+        </form></td>
+
+</tr>
